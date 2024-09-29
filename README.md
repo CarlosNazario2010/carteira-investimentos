@@ -24,6 +24,7 @@
 **Registrar um novo usuário:**
 
 POST http://localhost:8080/autenticacao/registrar
+
 Content-Type: application/json
 
 Corpo da requisição: JSON contendo as informações do novo usuário (nome, CPF, email e senha).
@@ -52,6 +53,7 @@ Resposta: JSON contendo o ID do usuário recém-criado e os dados cadastrados.
 **Logar um usuario ja registrado:**
 
 POST http://localhost:8080/autenticacao/logar
+
 Content-Type: application/json
 
 Corpo da requisição: JSON contendo o CPF e a senha do usuário.
@@ -83,6 +85,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRlbnRpY
 **Criar uma carteira para um usuario ja registrado**
 
 POST http://localhost:8080/carteiras
+
 Content-Type: application/json
 
 Corpo da requisição: JSON contendo o ID do cliente para o qual a carteira será criada.
@@ -116,6 +119,7 @@ Resposta: JSON contendo os detalhes da carteira criada, incluindo o ID, o client
 **Adicionar um valor de saldo a carteira para realizar a compra de ativos**
 
 POST http://localhost:8080/carteiras/1/adicionar
+
 Content-Type: application/json
 
 Parâmetro: {id} é o ID da carteira que será atualizada.
@@ -154,6 +158,7 @@ Este endpoint pode ser utilizado para realizar depósitos na carteira.
 **Comprar um ativo para a carteira**
 
 POST http://localhost:8080/carteiras/1/comprar
+
 Content-Type: application/json
 
 Parâmetro: {id} é o ID da carteira onde o ativo será adicionado.
@@ -215,6 +220,7 @@ Atualização de saldos: O saldo da carteira é atualizado com base no valor inv
 **Comprar um ativo que ja existe na carteira**
 
 POST http://localhost:8080/carteiras/1/comprar
+
 Content-Type: application/json
 
 Parâmetro: {id} é o ID da carteira onde o ativo será adicionado.
@@ -274,6 +280,7 @@ Array de ativos: O ativo comprado é atualizado e consolidado na carteira
 **Comprar um ativo que ainda nao existe na carteira**
 
 POST http://localhost:8080/carteiras/1/comprar
+
 Content-Type: application/json
 
 Parâmetro: {id} é o ID da carteira onde o ativo será adicionado.
@@ -348,6 +355,7 @@ Atualização automática: Os valores da carteira são atualizados automaticamen
 **Venda de um ativo da carteira**
 
 POST http://localhost:8080/carteiras/1/vender
+
 Content-Type: application/json
 
 Parâmetro: {id} é o ID da carteira onde o ativo será adicionado.
@@ -424,6 +432,7 @@ Atualização de valores: Os valores da carteira são atualizados após cada ven
 **Busca de uma carteira de um usuario**
 
 GET http://localhost:8080/carteiras/1/1
+
 Content-Type: application/json
 
 Parâmetro: Primeiro {id} é o ID do cliente que possui a carteira e o segundo é o ID da carteira onde o ativo será adicionado.
@@ -483,7 +492,8 @@ Cache: Este endpoint é cacheado por 20 minutos ou até que uma compra ou venda 
 
 **Busca de todas as compras feitas em uma carteira**
 
-http://localhost:8080/carteiras/1/ativos-comprados
+GET http://localhost:8080/carteiras/1/ativos-comprados
+
 Content-Type: application/json
 
 Parâmetro: Primeiro {id} é o ID da carteira do cliente.
@@ -524,7 +534,8 @@ Resposta: JSON contendo a lista dos ativos comprados na carteira de um cliente
 
 **Busca de todas as vendas feitas em uma carteira**
 
-http://localhost:8080/carteiras/1/ativos-vendidos
+GET http://localhost:8080/carteiras/1/ativos-vendidos
+
 Content-Type: application/json
 
 Parâmetro: Primeiro {id} é o ID da carteira do cliente.
