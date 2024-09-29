@@ -432,7 +432,7 @@ GET http://localhost:8080/carteiras/1/1
 
 Content-Type: application/json
 
-Parâmetro: Primeiro {id} é o ID do cliente que possui a carteira e o segundo é o ID da carteira onde o ativo será adicionado.
+Parâmetro: Primeiro {id} é o ID do cliente que possui a carteira e o segundo é o ID da carteira.
 
 Resposta: JSON contendo os detalhes da carteira atualizada
 
