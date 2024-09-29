@@ -1,5 +1,6 @@
 package com.carlosnazario.carteira_de_acoes.enteties;
 
+import com.carlosnazario.carteira_de_acoes.enums.Ticker;
 import com.carlosnazario.carteira_de_acoes.enums.TipoAtivo;
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,9 +22,8 @@ public class Ativo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @NotBlank
-    private String ticker;
+    @Enumerated(EnumType.STRING)
+    private Ticker ticker;
 
     @NotNull
     @NotBlank

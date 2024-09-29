@@ -32,7 +32,7 @@ public class AtivoService {
     public Ativo criarAtivo(Ativo ativo) throws JsonProcessingException {
 
         // Pega a cotacao com os dados em tempo real da api
-        Cotacao cotacao = brapiClient.getCotacao(ativo.getTicker());
+        Cotacao cotacao = brapiClient.getCotacao(String.valueOf(ativo.getTicker()));
 
         // Pega os dados da api e setta os mesmos no ativo
         BigDecimal precoAtual = cotacao.getPrecoAtual();

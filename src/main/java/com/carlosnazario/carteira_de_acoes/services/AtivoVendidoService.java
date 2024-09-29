@@ -45,7 +45,7 @@ public class AtivoVendidoService {
         AtivoVendido ativoVendido = new AtivoVendido();
 
         ativoVendido.setId(ativo.getId());
-        ativoVendido.setTicker(ativo.getTicker());
+        ativoVendido.setTicker(String.valueOf(ativo.getTicker()));
         ativoVendido.setQuantidade(ativo.getQuantidade());
         ativoVendido.setPrecoVenda(ativo.getPrecoVenda());
         ativoVendido.setTipo(ativo.getTipo());

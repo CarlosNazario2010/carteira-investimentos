@@ -36,7 +36,7 @@ public class AtivoCompradoService {
         AtivoComprado ativoComprado = new AtivoComprado();
 
         ativoComprado.setId(ativo.getId());
-        ativoComprado.setTicker(ativo.getTicker());
+        ativoComprado.setTicker(String.valueOf(ativo.getTicker()));
         ativoComprado.setQuantidade(ativo.getQuantidade());
         ativoComprado.setTotalCompra(ativo.getTotalinvestido());
         ativoComprado.setPrecoMedio(ativo.getPrecoMedio());

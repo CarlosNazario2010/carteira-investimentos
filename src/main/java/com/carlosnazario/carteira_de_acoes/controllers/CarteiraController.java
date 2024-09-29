@@ -280,7 +280,7 @@ public class CarteiraController {
         for (Ativo ativoDaCompra : ativos) {
             AtivoDTO dto = new AtivoDTO();
             dto.setTipo(ativoDaCompra.getTipo());
-            dto.setTicker(ativoDaCompra.getTicker());
+            dto.setTicker(String.valueOf(ativoDaCompra.getTicker()));
             dto.setQuantidade(BigDecimal.valueOf(ativoDaCompra.getQuantidade()));
             dto.setPrecoMedio(ativoDaCompra.getPrecoMedio());
             dto.setTotalInvestido(ativoDaCompra.getTotalinvestido());

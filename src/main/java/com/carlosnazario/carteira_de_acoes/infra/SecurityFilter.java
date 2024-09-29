@@ -54,7 +54,7 @@ public class SecurityFilter extends OncePerRequestFilter {
                 response.setStatus(HttpStatus.UNAUTHORIZED.value());
                 response.setContentType("application/json");
                 try (OutputStream os = response.getOutputStream()) {
-                    byte[] output = "{\"message\":\"Usuário não encontrado\"}".getBytes(StandardCharsets.UTF_8);
+                    byte[] output = "{\"message\":\"token invalido\"}".getBytes(StandardCharsets.UTF_8);
                     os.write(output);
                 }
                 return;

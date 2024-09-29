@@ -53,7 +53,7 @@ public class CarteiraService {
         // A lista de ativos da carteira ja possui todos os dados que nao precisam ser atualizados em tempo real
         // O laco pega os atributos pegos pela api em tempo real e os setta nos ativos da carteira
         for (Ativo ativo : ativos) {
-            Cotacao cotacao = brapiClient.getCotacao(ativo.getTicker());
+            Cotacao cotacao = brapiClient.getCotacao(String.valueOf(ativo.getTicker()));
 
             BigDecimal precoAtual = cotacao.getPrecoAtual();
             BigDecimal variacaoDiariaPreco = cotacao.getVariacaoDiariaPreco();
@@ -328,7 +328,7 @@ public class CarteiraService {
                 .divide(BigDecimal.valueOf(ativoExistente.getQuantidade()), 2, RoundingMode.HALF_UP));
 
         // Pegar a cotacao atualizada
-        Cotacao cotacao = brapiClient.getCotacao(ativoParaComprar.getTicker());
+        Cotacao cotacao = brapiClient.getCotacao(String.valueOf(ativoParaComprar.getTicker()));
 
         // Pegar os dados fornecidos pela api
         BigDecimal precoAtual = cotacao.getPrecoAtual();
@@ -383,7 +383,7 @@ public class CarteiraService {
         ativoExistente.setTotalinvestido(novoTotal);
 
         // Pega a cotacao atraves da api
-        Cotacao cotacao = brapiClient.getCotacao(ativoParaVenda.getTicker());
+        Cotacao cotacao = brapiClient.getCotacao(String.valueOf(ativoParaVenda.getTicker()));
 
         // Pega os dados fornecidos pela api
         BigDecimal precoAtual = cotacao.getPrecoAtual();
