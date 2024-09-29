@@ -129,6 +129,7 @@ Corpo da requisição: JSON contendo o novo valor a ser adicionado ao saldo da c
 {
   "novoSaldo": 20000.00
 }
+```
 
 Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo saldo.
 
