@@ -1,7 +1,6 @@
 package com.carlosnazario.carteira_de_acoes.services;
 
 import com.carlosnazario.carteira_de_acoes.enteties.Cliente;
-import com.carlosnazario.carteira_de_acoes.exceptions.carteiras.CarteiraNaoEncontradaException;
 import com.carlosnazario.carteira_de_acoes.exceptions.clientes.*;
 import com.carlosnazario.carteira_de_acoes.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,7 +68,7 @@ public class ClienteService {
      *
      * @param id O identificador do cliente a ser recuperado.
      * @return Um Optional contendo o objeto Cliente encontrado, ou Optional.empty() caso o cliente não seja encontrado.
-     * @throws CarteiraNaoEncontradaException Se o cliente não for encontrado
+     * @throws ClienteNaoEncontradoException Se o cliente não for encontrado
      */
     public Optional<Cliente> buscarClientePorId(Long id) {
         return Optional.ofNullable(clienteRepository.findById(id).orElseThrow(() -> new ClienteNaoEncontradoException("cliente nao encontrado")));
