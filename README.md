@@ -418,12 +418,11 @@ Resposta: JSON contendo os detalhes da carteira atualizada, excluindo os ativos 
 
 Observações:
 
-Remoção de ativos: A quantidade vendida é removida da quantidade total do ativo na carteira. Caso a quantidade vendida
-                   seja maior que a disponível, a operação será rejeitada.
-Cálculo do lucro/prejuízo: O lucro ou prejuízo da operação é calculado pela diferença entre o valor total da venda
-                           (quantidade * preço de venda) e o valor total investido no ativo vendido.
-Atualização de valores: Os valores da carteira são atualizados após cada venda, incluindo saldo, valor investido,
-                        lucro/prejuízo e total da carteira.
+Remoção de ativos: A quantidade vendida é removida da quantidade total do ativo na carteira. Caso a quantidade vendida seja maior que a disponível, a operação será rejeitada.
+
+Cálculo do lucro/prejuízo: O lucro ou prejuízo da operação é calculado pela diferença entre o valor total da venda (quantidade * preço de venda) e o valor total investido no ativo vendido.
+
+Atualização de valores: Os valores da carteira são atualizados após cada venda, incluindo saldo, valor investido,lucro/prejuízo e total da carteira.
 
 
 **Busca de uma carteira de um usuario**
