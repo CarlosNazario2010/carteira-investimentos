@@ -29,6 +29,7 @@ Content-Type: application/json
 
 Corpo da requisição: JSON contendo as informações do novo usuário (nome, CPF, email e senha).
 
+```json
 {
   "nome": "Carlos Nazario2",
   "cpf": "908.444.800-61",
@@ -36,7 +37,10 @@ Corpo da requisição: JSON contendo as informações do novo usuário (nome, CP
   "senha": "minhaSenha123"
 }
 
+
 Resposta: JSON contendo o ID do usuário recém-criado e os dados cadastrados.
+
+```json
 {
   "id": 1,
   "nome": "Carlos Nazario2",
