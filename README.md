@@ -21,6 +21,7 @@
 
 ### Exemplos de Requisições e Respostas
 
+
 **Registrar um novo usuário:**
 
 POST http://localhost:8080/autenticacao/registrar
@@ -49,6 +50,7 @@ Resposta: JSON contendo o ID do usuário recém-criado e os dados cadastrados.
   "cpf": "908.444.800-61"
 }
 ```
+
 
 **Logar um usuario ja registrado:**
 
@@ -111,6 +113,7 @@ Resposta: JSON contendo os detalhes da carteira criada, incluindo o ID, o client
   "totalDaCarteira": 0 // Valor total da carteira (soma dos valores dos ativos)
 }
 ```
+
 
 **Adicionar um valor de saldo a carteira para realizar a compra de ativos**
 
@@ -526,6 +529,7 @@ Resposta: JSON contendo a lista dos ativos comprados na carteira de um cliente
 ]
 ```
 
+
 **Busca de todas as vendas feitas em uma carteira**
 
 GET http://localhost:8080/carteiras/1/ativos-vendidos
@@ -556,6 +560,8 @@ Resposta: JSON contendo a lista dos ativos vendidos na carteira de um cliente
 Observações:
 
 Lucro ou Prejuizo: A API informa o lucro ou prejuizo da operacao realizada
+
+
 
 
 **Contribuições:**
