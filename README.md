@@ -21,7 +21,7 @@
 
 ### Exemplos de Requisições e Respostas
 
-
+```json
 **Registrar um novo usuário:**
 
 POST http://localhost:8080/autenticacao/registrar
@@ -29,7 +29,6 @@ Content-Type: application/json
 
 Corpo da requisição: JSON contendo as informações do novo usuário (nome, CPF, email e senha).
 
-```json
 {
   "nome": "Carlos Nazario2",
   "cpf": "908.444.800-61",
