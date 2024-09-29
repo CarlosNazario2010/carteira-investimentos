@@ -224,7 +224,7 @@ Corpo da requisição: JSON contendo os detalhes do ativo a ser comprado (ticker
 {
   "ticker": "PETR3",
   "quantidade": 100,
-  "precoMedio": 30.00,
+  "precoMedio": 5.00,
   "tipo": "ACAO"
 }
 ```
