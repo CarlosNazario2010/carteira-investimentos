@@ -69,13 +69,13 @@ Resposta JSON contendo o token JWT (JSON Web Token) de autenticação.
 
 ```json
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRlbnRpY2FjYS1hcGk iLCJzdWIiOiI5MDguNDQ4LjgwMC02MSIsImV4cCI6MTcyNzU5NDA0OH0.hMe2WY1kYfv 0ztbGpp0HDqkdAG1D9vB_ac2hJM3cy4s"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRlbnRpY2FjYS1hcGkiLCJzdWIiOiI5MDguNDQ4LjgwMC02MSIsImV4cCI6MTcyNzU5NDA0OH0.hMe2WY1kYfv0ztbGpp0HDqkdAG1D9vB_ac2hJM3cy4s"
 }
 ```
 
 Este token deve ser incluído no header das próximas requisições da seguinte forma:
 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRlbnRpY2 FjYS1hcGkiLCJzdWIiOiI5MDguNDQ4LjgwMC02MSIsImV4cCI6MTcyNzU5N DA0OH0.hMe2WY1kYfv0ztbGpp0HDqkdAG1D9vB_ac2hJM3cy4s
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRlbnRpY2FjYS1hcGkiLCJzdWIiOiI5MDguNDQ4LjgwMC02MSIsImV4cCI6MTcyNzU5NDA0OH.hMe2WY1kYfv0ztbGpp0HDqkdAG1D9vB_ac2hJM3cy4s
 
 
 **Criar uma carteira para um usuario ja registrado**
@@ -207,10 +207,10 @@ saldo, valor investido, lucro/prejuízo e total da carteira.
 
 Observações:
 
-Cálculos: A API calcula o valor total investido no ativo, o valor atual do ativo considerando o preço atual
-          de mercado, o ganho ou perda total, o ganho ou perda percentual, a variação diária do preço e o
-          ganho ou perda diária.
+Cálculos: A API calcula o valor total investido no ativo, o valor atual do ativo considerando o preço atual de mercado, o ganho ou perda total, o ganho ou perda percentual, a variação diária do preço e o ganho ou perda diária.
+
 Array de ativos: O ativo comprado é adicionado ao array ativo da carteira.
+
 Atualização de saldos: O saldo da carteira é atualizado com base no valor investido no ativo.
 
 
@@ -232,8 +232,7 @@ Corpo da requisição: JSON contendo os detalhes do ativo a ser comprado (ticker
 }
 ```
 
-Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ativo adicionado e os cálculos de
-          saldo, valor investido, lucro/prejuízo e total da carteira.
+Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ativo adicionado e os cálculos de saldo, valor investido, lucro/prejuízo e total da carteira.
 
 ```json
 {
@@ -270,7 +269,8 @@ Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ati
 Observações:
 
 Calculo de valores consolidados: A API calcula os valores para consolidacao, caso o ativo ja exista na carteira,
-                                 como calculo de um novo preco medio e ajustes nos demais indicadores
+como calculo de um novo preco medio e ajustes nos demais indicadores
+
 Array de ativos: O ativo comprado é atualizado e consolidado na carteira
 
 
@@ -292,8 +292,7 @@ Corpo da requisição: JSON contendo os detalhes do ativo a ser comprado (ticker
 }
 ```
 
-Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ativo adicionado e os cálculos de
-          saldo, valor investido, lucro/prejuízo e total da carteira.
+Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ativo adicionado e os cálculos do saldo, valor investido, lucro/prejuízo e total da carteira.
 
 ```json
 {
@@ -343,10 +342,9 @@ Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ati
 
 Observações:
 
-Múltiplos ativos: A API suporta múltiplos ativos por carteira. O preço médio de um ativo é calculado considerando
-                  todas as compras realizadas.
-Atualização automática: Os valores da carteira são atualizados automaticamente após cada compra, incluindo saldo,
-                        valor investido, lucro/prejuízo e total da carteira.
+Múltiplos ativos: A API suporta múltiplos ativos por carteira. O preço médio de um ativo é calculado considerando todas as compras realizadas.
+
+Atualização automática: Os valores da carteira são atualizados automaticamente após cada compra, incluindo saldo,valor investido, lucro/prejuízo e total da carteira.
 
 
 **Venda de um ativo da carteira**
