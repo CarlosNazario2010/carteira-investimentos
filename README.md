@@ -279,6 +279,15 @@ Content-Type: application/json
 Parâmetro: {id} é o ID da carteira onde o ativo será adicionado.
 Corpo da requisição: JSON contendo os detalhes do ativo a ser comprado (ticker, quantidade, preço médio e tipo).
 
+```json
+{
+  "ticker": "SAPR11",
+  "quantidade": 100,
+  "precoMedio": 10.00,
+  "tipo": "ACAO"
+}
+```
+
 Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ativo adicionado e os cálculos de
           saldo, valor investido, lucro/prejuízo e total da carteira.
 
