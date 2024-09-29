@@ -21,7 +21,6 @@
 
 ### Exemplos de Requisições e Respostas
 
-```json
 **Registrar um novo usuário:**
 
 POST http://localhost:8080/autenticacao/registrar
@@ -29,13 +28,15 @@ Content-Type: application/json
 
 Corpo da requisição: JSON contendo as informações do novo usuário (nome, CPF, email e senha).
 
+```json
+
 {
   "nome": "Carlos Nazario2",
   "cpf": "908.444.800-61",
   "email": "carlos@email.com",
   "senha": "minhaSenha123"
 }
-
+```
 
 Resposta: JSON contendo o ID do usuário recém-criado e os dados cadastrados.
 
@@ -46,7 +47,7 @@ Resposta: JSON contendo o ID do usuário recém-criado e os dados cadastrados.
   "email": "carlos@email.com",
   "cpf": "908.444.800-61"
 }
-
+```
 
 **Logar um usuario ja registrado:**
 
@@ -55,18 +56,22 @@ Content-Type: application/json
 
 Corpo da requisição: JSON contendo o CPF e a senha do usuário.
 
+```json
 {
   "cpf": "908.444.800-61",
   "senha": "minhaSenha123"
 }
+```
 
 Resposta JSON contendo o token JWT (JSON Web Token) de autenticação.
 
+```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRlbnRpY2FjYS1hcGk
             iLCJzdWIiOiI5MDguNDQ4LjgwMC02MSIsImV4cCI6MTcyNzU5NDA0OH0.hMe2WY1kYfv
             0ztbGpp0HDqkdAG1D9vB_ac2hJM3cy4s"
 }
+```
 
 Este token deve ser incluído no header das próximas requisições da seguinte forma:
 
@@ -82,13 +87,16 @@ Content-Type: application/json
 
 Corpo da requisição: JSON contendo o ID do cliente para o qual a carteira será criada.
 
+```json
 {
   "clienteId": 1
 }
+```
 
 Resposta: JSON contendo os detalhes da carteira criada, incluindo o ID, o cliente associado
           e os valores iniciais (saldo, valor investido, lucro/prejuízo e total da carteira).
 
+```json
 {
   "id": 1,
   "cliente": {
@@ -103,7 +111,7 @@ Resposta: JSON contendo os detalhes da carteira criada, incluindo o ID, o client
   "lucroPrejuizo": 0, // Lucro ou prejuízo total da carteira
   "totalDaCarteira": 0 // Valor total da carteira (soma dos valores dos ativos)
 }
-
+```
 
 **Adicionar um valor de saldo a carteira para realizar a compra de ativos**
 
@@ -113,12 +121,14 @@ Content-Type: application/json
 Parâmetro: {id} é o ID da carteira que será atualizada.
 Corpo da requisição: JSON contendo o novo valor a ser adicionado ao saldo da carteira.
 
+```json
 {
   "novoSaldo": 20000.00
 }
 
 Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo saldo.
 
+```json
 {
   "id": 1,
   "cliente": {
@@ -133,6 +143,7 @@ Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo sal
   "lucroPrejuizo": 0.00,
   "totalDaCarteira": 0.00
 }
+```
 
 Observações:
 
@@ -148,16 +159,19 @@ Content-Type: application/json
 Parâmetro: {id} é o ID da carteira onde o ativo será adicionado.
 Corpo da requisição: JSON contendo os detalhes do ativo a ser comprado (ticker, quantidade, preço médio e tipo).
 
+```json
 {
   "ticker": "PETR3",
   "quantidade": 100,
   "precoMedio": 30.00,
   "tipo": "ACAO"
 }
+```
 
 Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ativo adicionado e os cálculos de
 saldo, valor investido, lucro/prejuízo e total da carteira.
 
+```json
 {
   "id": 1,
   "cliente": {
@@ -187,6 +201,7 @@ saldo, valor investido, lucro/prejuízo e total da carteira.
   "lucroPrejuizo": 0.00,
   "totalDaCarteira": 20000.00
 }
+```
 
 Observações:
 
@@ -205,16 +220,19 @@ Content-Type: application/json
 Parâmetro: {id} é o ID da carteira onde o ativo será adicionado.
 Corpo da requisição: JSON contendo os detalhes do ativo a ser comprado (ticker, quantidade, preço médio e tipo).
 
+```json
 {
   "ticker": "PETR3",
   "quantidade": 100,
   "precoMedio": 30.00,
   "tipo": "ACAO"
 }
+```
 
 Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ativo adicionado e os cálculos de
           saldo, valor investido, lucro/prejuízo e total da carteira.
 
+```json
 {
     "id": 1,
     "cliente": {
@@ -244,6 +262,7 @@ Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ati
     "lucroPrejuizo": 0.00,
     "totalDaCarteira": 20000.00
 }
+```
 
 Observações:
 
@@ -263,6 +282,7 @@ Corpo da requisição: JSON contendo os detalhes do ativo a ser comprado (ticker
 Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ativo adicionado e os cálculos de
           saldo, valor investido, lucro/prejuízo e total da carteira.
 
+```json
 {
     "id": 1,
     "cliente": {
@@ -306,6 +326,7 @@ Resposta: JSON contendo os detalhes da carteira atualizada, incluindo o novo ati
     "lucroPrejuizo": 0.00,
     "totalDaCarteira": 20000.00
 }
+```
 
 Observações:
 
@@ -323,16 +344,19 @@ Content-Type: application/json
 Parâmetro: {id} é o ID da carteira onde o ativo será adicionado.
 Corpo da requisição: JSON contendo os detalhes do ativo a ser comprado (ticker, quantidade, preço de venda e tipo).
 
+```json
 {
   "ticker": "PETR3",
   "quantidade": 100,
   "precoVenda": 30.00,
   "tipo": "ACAO"
 }
+```
 
 Resposta: JSON contendo os detalhes da carteira atualizada, excluindo os ativos vendidos, juntamente com os cálculos de
           saldo, valor investido, lucro/prejuízo e total da carteira.
 
+```json
 {
     "id": 1,
     "cliente": {
@@ -376,6 +400,7 @@ Resposta: JSON contendo os detalhes da carteira atualizada, excluindo os ativos 
     "lucroPrejuizo": 1250.00,
     "totalDaCarteira": 21250.00
 }
+```
 
 Observações:
 
@@ -396,6 +421,7 @@ Parâmetro: Primeiro {id} é o ID do cliente que possui a carteira e o segundo �
 
 Resposta: JSON contendo os detalhes da carteira atualizada
 
+```json
 {
     "id": 1,
     "cliente": {
@@ -439,6 +465,7 @@ Resposta: JSON contendo os detalhes da carteira atualizada
     "lucroPrejuizo": 1250.00,
     "totalDaCarteira": 21250.00
 }
+```
 
 Observações:
 
@@ -454,6 +481,7 @@ Parâmetro: Primeiro {id} é o ID da carteira do cliente.
 
 Resposta: JSON contendo a lista dos ativos comprados na carteira de um cliente
 
+```json
 [
     {
         "id": 1,
@@ -483,7 +511,7 @@ Resposta: JSON contendo a lista dos ativos comprados na carteira de um cliente
         "dataCompra": "2024-09-29"
     }
 ]
-
+```
 
 **Busca de todas as vendas feitas em uma carteira**
 
@@ -494,6 +522,7 @@ Parâmetro: Primeiro {id} é o ID da carteira do cliente.
 
 Resposta: JSON contendo a lista dos ativos vendidos na carteira de um cliente
 
+```json
 [
     {
         "id": 1,
@@ -508,6 +537,7 @@ Resposta: JSON contendo a lista dos ativos vendidos na carteira de um cliente
         "lucroPrejuizo": 1250.00
     }
 ]
+```
 
 Observações:
 
