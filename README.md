@@ -26,8 +26,8 @@
 1. **Pré-requisitos:** Java 11+, Maven, PostgreSQL
 2. **Clonar o repositório:** `git clone https://github.com/carlosNazario2010/carteira-investimentos.git`
 3. **Configurar o banco de dados PostgreSQL**
-4. **Construir a imagem Docker: `docker build -t carteira-de-acoes:1.0 .`
-5. **Executar o container: `docker run -p 8080:8080 carteira-de-acoes:1.0`
+4. **Construir a imagem Docker:** `docker build -t carteira-de-acoes:1.0 .`
+5. **Executar o container:** `docker run -p 8080:8080 carteira-de-acoes:1.0`
 
 ### Exemplos de Requisições e Respostas
 
