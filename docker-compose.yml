@@ -1,0 +1,24 @@
+version: '3.8'  # Especifique a versão do docker-compose
+
+services:
+  # Serviço para o banco de dados PostgreSQL
+  db:
+    image: postgres:latest  # Utilize a imagem oficial do PostgreSQL
+    environment:  # Defina as variáveis de ambiente para o banco de dados
+      POSTGRES_USER: postgres  # Usuário do banco de dados
+      POSTGRES_PASSWORD: root  # Senha do banco de dados (ajuste se necessário)
+      POSTGRES_DB: carteira  # Nome do banco de dados
+
+  # Serviço para a sua aplicação Spring Boot
+  app:
+    build: .  # Construa a imagem a partir do diretório atual
+    ports:
+      - "8080:8080"  # Mapeie a porta 8080 do container para a porta 8080 do host
+    depends_on:
+      - db  # A aplicação depende do serviço do banco de dados
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/carteira  # URL de conexão
+      SPRING_DATASOURCE_USERNAME: postgres  # Usuário do banco de dados
+      SPRING_DATASOURCE_PASSWORD: root  # Senha do banco de dados (ajuste se necessário)
+      SPRING_JPA.HIBERNATE.DDL-AUTO: update  # Atualize schema do banco de dados
+      SPRING_JPA.DATABASE-PLATFORM: org.hibernate.dialect.PostgreSQLDialect  # Dialecto PostgreSQL para Hibernate
