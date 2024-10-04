@@ -23,11 +23,12 @@
 
 **Como executar em container Docker:**
 
-1. **Pré-requisitos:** Java 11+, Maven, PostgreSQL
-2. **Clonar o repositório:** `git clone https://github.com/carlosNazario2010/carteira-investimentos.git`
-3. **Configurar o banco de dados PostgreSQL**
-4. **Construir a imagem Docker:** `docker build -t carteira-de-acoes:1.0 .`
-5. **Executar o container:** `docker run -p 8080:8080 carteira-de-acoes:1.0`
+1. **Certifique-se de que o Docker e o Docker Compose estejam instalados na sua máquina**
+
+2. **Construir a imagem Docker:** `docker build -t carteira-de-acoes:1.0 .`
+3. **Executar o container:** `docker run -p 8080:8080 carteira-de-acoes:1.0`
+
+4. **Ou rode via Docker Compose:** `docker-compose up -d`
 
 ### Exemplos de Requisições e Respostas
 
