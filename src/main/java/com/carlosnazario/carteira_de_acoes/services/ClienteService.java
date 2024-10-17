@@ -71,7 +71,8 @@ public class ClienteService {
      * @throws ClienteNaoEncontradoException Se o cliente não for encontrado
      */
     public Optional<Cliente> buscarClientePorId(Long id) {
-        return Optional.ofNullable(clienteRepository.findById(id).orElseThrow(() -> new ClienteNaoEncontradoException("cliente nao encontrado")));
+        return Optional.ofNullable(clienteRepository.findById(id)
+                .orElseThrow(() -> new ClienteNaoEncontradoException("cliente nao encontrado")));
     }
 
     /**
@@ -110,5 +111,9 @@ public class ClienteService {
         } else {
             throw new ClienteNaoEncontradoException("Cliente não encontrado");
         }
+    }
+
+    public Cliente buscarClientePorCpf(String cpf) {
+        return clienteRepository.getClienteByCpf(cpf);
     }
 }

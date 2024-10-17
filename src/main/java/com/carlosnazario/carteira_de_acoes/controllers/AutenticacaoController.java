@@ -91,7 +91,12 @@ public class AutenticacaoController {
             UserDetails userDetails = autorizacaoService.loadUserByUsername(cliente.getCpf());
             var token = tokenService.geradorDeToken(userDetails);
 
-            return ResponseEntity.ok(new LoginResponseDTO(token));
+            Cliente clienteRetornado = clienteService.buscarClientePorCpf(cliente.getCpf());
+            Long id = clienteRetornado.getId();
+            String nome = clienteRetornado.getNome();
+
+            return ResponseEntity.ok(new LoginResponseDTO(token, id, nome));
+
         } catch (AuthenticationException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas");
         }
