@@ -25,6 +25,8 @@ public class SecurityConfiguration {
     /**
      * Configura a cadeia de filtros de segurança da aplicação.
      *
+     * Obs - metodos .cors() e .and() estao marcados como deprecated
+     *
      * @param httpSecurity Objeto HttpSecurity utilizado para definir as configurações de segurança.
      * @return SecurityFilterChain contendo a cadeia de filtros de segurança.
      * @throws Exception Lançada caso haja erro ao configurar a segurança.
