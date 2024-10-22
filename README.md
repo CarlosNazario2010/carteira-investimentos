@@ -82,7 +82,9 @@ Resposta JSON contendo o token JWT (JSON Web Token) de autenticação.
 
 ```json
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRlbnRpY2FjYS1hcGkiLCJzdWIiOiI5MDguNDQ4LjgwMC02MSIsImV4cCI6MTcyNzU5NDA0OH0.hMe2WY1kYfv0ztbGpp0HDqkdAG1D9vB_ac2hJM3cy4s"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRlbnRpY2FjYS1hcGkiLCJzdWIiOiIwMDczMjk2MjAxMyIsImV4cCI6MTcyOTU5NzQ1NH0.Egw_8y29quJi6d289Jj2ZJEaTs3XWY4WNvZt6vTPN6g",
+  "id": 1,
+  "nome": "Carlos Nazario"
 }
 ```
 
