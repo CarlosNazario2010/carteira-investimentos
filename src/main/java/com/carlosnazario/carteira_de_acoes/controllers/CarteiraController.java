@@ -64,7 +64,7 @@ public class CarteiraController {
      * @return Um dto de uma carteira de um determinado cliente
      * @throws JsonProcessingException Caso ocorra algum erro na serializacao ou desserializacao do json
      */
-    @GetMapping("{idCliente}/{idCarteira}")
+    @GetMapping
     @Cacheable(value = "carteiras", key = "#idCliente + '_' + #idCarteira")
     public ResponseEntity<CarteiraDTO> buscarCarteiraPorId(@RequestBody BuscarCarteiraRequest request) throws JsonProcessingException {
         Cliente cliente = clienteService.buscarClientePorId(request.getClienteId())

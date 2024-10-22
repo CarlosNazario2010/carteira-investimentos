@@ -441,11 +441,19 @@ Atualização de valores: Os valores da carteira são atualizados após cada ven
 
 **Busca de uma carteira de um usuario**
 
-GET http://localhost:8080/carteiras/1/1
+GET http://localhost:8080/carteiras
 
 Content-Type: application/json
 
-Parâmetro: Primeiro {id} é o ID do cliente que possui a carteira e o segundo é o ID da carteira.
+Corpo da requisição: JSON contendo os dados de id do cliente e o id da carteira a ser buscada.
+
+```json
+{
+  "clienteId": 1,
+  "carteiraId": 1
+}
+
+``` 
 
 Resposta: JSON contendo os detalhes da carteira atualizada
 
