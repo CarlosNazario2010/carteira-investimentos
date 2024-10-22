@@ -57,19 +57,15 @@ public class CarteiraController {
                 .body(carteiraDTO);
     }
 
-    /**
-     * Controller que chama o metodo que busca uma carteira de um determinado cliente
-     *
-     * @param request Dto com as informacoes recebidas do cliente da requisicao para realizar a busca da carteira
-     * @return Um dto de uma carteira de um determinado cliente
-     * @throws JsonProcessingException Caso ocorra algum erro na serializacao ou desserializacao do json
-     */
+
     @GetMapping
-    @Cacheable(value = "carteiras", key = "#idCliente + '_' + #idCarteira")
-    public ResponseEntity<CarteiraDTO> buscarCarteiraPorId(@RequestBody BuscarCarteiraRequest request) throws JsonProcessingException {
-        Cliente cliente = clienteService.buscarClientePorId(request.getClienteId())
+    public ResponseEntity<CarteiraDTO> buscarCarteiraPorId(
+            @RequestParam Long clienteId,
+            @RequestParam Long carteiraId
+    ) throws JsonProcessingException {
+        Cliente cliente = clienteService.buscarClientePorId(clienteId)
                 .orElseThrow(() -> new ClienteNaoEncontradoException("cliente nao encontrado"));
-        Carteira carteira = carteiraService.buscarCarteiraPorId(request.getCarteiraId());
+        Carteira carteira = carteiraService.buscarCarteiraPorId(carteiraId);
 
         List<Ativo> ativos = carteira.getAtivos();
 
