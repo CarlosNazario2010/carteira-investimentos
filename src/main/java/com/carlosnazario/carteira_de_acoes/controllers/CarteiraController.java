@@ -2,7 +2,6 @@ package com.carlosnazario.carteira_de_acoes.controllers;
 
 import com.carlosnazario.carteira_de_acoes.dtos.*;
 import com.carlosnazario.carteira_de_acoes.dtos.requests.AtualizarSaldoRequest;
-import com.carlosnazario.carteira_de_acoes.dtos.requests.BuscarCarteiraRequest;
 import com.carlosnazario.carteira_de_acoes.dtos.requests.CriarCarteiraRequest;
 import com.carlosnazario.carteira_de_acoes.enteties.*;
 import com.carlosnazario.carteira_de_acoes.exceptions.carteiras.AtivoNaoEncontradoException;
@@ -14,7 +13,6 @@ import com.carlosnazario.carteira_de_acoes.services.ClienteService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -57,7 +55,6 @@ public class CarteiraController {
                 .body(carteiraDTO);
     }
 
-
     @GetMapping
     public ResponseEntity<CarteiraDTO> buscarCarteiraPorId(
             @RequestParam Long clienteId,
@@ -74,6 +71,12 @@ public class CarteiraController {
         CarteiraDTO carteiraDTO = criaCarteiraDTO(carteira, clienteDTO, ativosDTO);
 
         return ResponseEntity.ok(carteiraDTO);
+    }
+
+    @GetMapping("/cliente")
+    public ResponseEntity<Carteira> buscarCarteiraPorClienteId(@RequestParam Long clienteId) {
+        Carteira carteira = carteiraService.buscarCarteiraPorClienteId(clienteId);
+        return ResponseEntity.ok(carteira);
     }
 
     /**

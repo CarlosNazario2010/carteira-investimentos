@@ -36,6 +36,10 @@ public class CarteiraService {
         carteiraRepository.save(carteira);
     }
 
+    public Carteira buscarCarteiraPorClienteId(Long clienteId) {
+        return carteiraRepository.findByClienteId(clienteId);
+    }
+
     /**
      * Metodo que busca uma carteira ja criada pelo seu "id"
      * Ja adiciona alguns atributos em tempo real fornecidos pela api

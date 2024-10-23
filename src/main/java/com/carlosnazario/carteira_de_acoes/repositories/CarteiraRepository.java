@@ -4,4 +4,5 @@ import com.carlosnazario.carteira_de_acoes.enteties.Carteira;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CarteiraRepository extends JpaRepository<Carteira, Long> {
+    Carteira findByClienteId(Long clienteId);
 }
