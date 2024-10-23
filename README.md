@@ -447,13 +447,6 @@ Content-Type: application/json
 
 Corpo da requisição: JSON contendo os dados de id do cliente e o id da carteira a ser buscada.
 
-```json
-{
-  "clienteId": 1,
-  "carteiraId": 1
-}
-
-``` 
 
 Resposta: JSON contendo os detalhes da carteira atualizada
 
