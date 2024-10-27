@@ -13,6 +13,7 @@ import com.carlosnazario.carteira_de_acoes.services.ClienteService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -56,6 +57,7 @@ public class CarteiraController {
     }
 
     @GetMapping
+    @Cacheable(value = "carteiras", key = "#carteiraId")
     public ResponseEntity<CarteiraDTO> buscarCarteiraPorId(
             @RequestParam Long clienteId,
             @RequestParam Long carteiraId
