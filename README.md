@@ -582,9 +582,9 @@ Lucro ou Prejuizo: A API informa o lucro ou prejuizo da operacao realizada
 
 Se você quiser contribuir, por favor, abra um pull request.
 
-**Licença:** MIT
+**Licença:** 
 
 **Arquitetura:**
 
-**Padrões de projeto:** API Rest
+**Padrões de projeto:** 
 
